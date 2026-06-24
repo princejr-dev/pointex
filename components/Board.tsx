@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Point from "./Point";
 import { FaCircle } from "react-icons/fa";
 
@@ -140,7 +140,27 @@ export default function Board() {
   setMessage("");
 };
 
-const cellSize = 40;
+    const [cellSize, setCellSize] = useState(40);
+
+useEffect(() => {
+  const updateSize = () => {
+    const reservedTopSpace = 120;
+
+    setCellSize(
+      Math.floor(
+        Math.min(
+          window.innerWidth / pointsSize,
+          (window.innerHeight - reservedTopSpace) / pointsSize
+        )
+      )
+    );
+  };
+
+  updateSize();
+  window.addEventListener("resize", updateSize);
+
+  return () => window.removeEventListener("resize", updateSize);
+}, []);
 
 let winnerMessage = "DRAW";
 
@@ -151,22 +171,22 @@ if (score.blue > score.red) {
 }
 
   return (
-    <main className="relative w-screen h-screen overflow-hidden">
-      <div className="absolute top-2 left-1/2 flex -translate-x-1/2 flex-col items-center gap-6 text-white game-font">
+    <main className="flex h-screen flex-col items-center">
+      <div className="mt-4 flex flex-col items-center gap-4 text-white game-font">
         <div className="flex gap-6 text-lg items-center">
             <div className="flex items-center gap-2">
                 <FaCircle className="text-blue-500 drop-shadow-[0_0_8px_rgba(59,130,246,0.8)]"/>
                   {score.blue}
             </div>
-            
+            <span className="text-white">-</span>
             <div className="flex items-center gap-2">
-                <FaCircle className="text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
                   {score.red}
+                <FaCircle className="text-red-500 drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
             </div>
         </div>
 
         <div 
-          className={`font-semibold ${
+          className={`font-semibold mb-6 ${
             isBlueTurn ? "text-blue-400" : "text-red-400"
          }`}
         >
@@ -217,7 +237,7 @@ if (score.blue > score.red) {
         )}
 
       <div
-        className="absolute bottom-0 right-0 grid"
+        className="grid flex-1 self-stretch"
         style={{
             gridTemplateColumns: `repeat(${pointsSize}, ${cellSize}px)`,
             gridTemplateRows: `repeat(${pointsSize}, ${cellSize}px)`,
