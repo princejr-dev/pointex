@@ -1,0 +1,97 @@
+/* MUST BE FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+
+@import "tailwindcss";
+
+/* =======================
+   THEME GAME GLOBAL
+======================= */
+
+:root {
+  --bg: #0b0f1a;
+  --grid: #1f2a44;
+  --text: #e5e7eb;
+  --blue: #3b82f6;
+  --red: #ef4444;
+}
+
+body {
+  background: radial-gradient(circle at center, #111827, #05070f);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+/* =======================
+   GAME FONT
+======================= */
+
+.game-font {
+  font-family: "Russo One", sans-serif;
+}
+
+/* =======================
+   FLOAT ANIMATION
+======================= */
+
+@keyframes floatUpFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) scale(0.95);
+  }
+}
+
+.float-up {
+  animation: floatUpFade 900ms ease-out forwards;
+}
+
+/* =======================
+   SHAKE GAME OVER
+======================= */
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-2px); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* =======================
+   GRID STYLE
+======================= */
+
+.grid-cell {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* =======================
+   DOT STYLE
+======================= */
+
+.dot {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+/* =======================
+   SCORE GLOW
+======================= */
+
+.blue-glow {
+  color: var(--blue);
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+}
+
+.red-glow {
+  color: var(--red);
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.6);
+}
