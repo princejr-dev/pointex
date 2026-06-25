@@ -237,7 +237,7 @@ if (score.blue > score.red) {
         )}
 
       <div
-        className="grid flex-1 self-stretch"
+        className="absolute -bottom-4 left-3 right-0 grid"
         style={{
             gridTemplateColumns: `repeat(${pointsSize}, ${cellSize}px)`,
             gridTemplateRows: `repeat(${pointsSize}, ${cellSize}px)`,

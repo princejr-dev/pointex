@@ -469,8 +469,8 @@ function triggerUpdate(msg) {
 "[hmr-entry]/hmr-entry.js { ENTRY => \"[project]/Documents/React_Projects/pointex/pointex/pages/_error\" }", ((__turbopack_context__) => {
 "use strict";
 
-__turbopack_context__.r("[next]/entry/page-loader.ts { PAGE => \"[project]/Documents/React_Projects/pointex/pointex/node_modules/next/dist/pages/_error.js [client] (ecmascript)\" } [client] (ecmascript)");
+__turbopack_context__.r("[next]/entry/page-loader.ts { PAGE => \"[project]/Documents/React_Projects/pointex/node_modules/next/dist/pages/_error.js [client] (ecmascript)\" } [client] (ecmascript)");
 }),
 ]);
 
-//# sourceMappingURL=%5Broot-of-the-server%5D__16n4rgx.
+//# sourceMappingURL=%5Broot-of-the-server%5D__16n4rgx._.js.map
