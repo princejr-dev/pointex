@@ -1,12 +1,12 @@
-# Pointex - Point Game
+# Pointex
 
-A strategic grid-based two-player game built with Next.js.
+A strategic grid-based multiplayer.
 
 ---
 
 ## 🎮 About the game
 
-Pointex is a turn-based grid game inspired by classic paper games played in school notebooks.
+Pointex is a strategic grid game inspired by classic paper games played in school notebooks.
 
 Two players (Blue 🔵 and Red 🔴) take turns placing points on a grid.  
 When a player completes a square, they score a point.
@@ -49,7 +49,7 @@ The game ends when all points are filled, and the player with the highest score 
 
 ## 📸 Preview
 
-(Add screenshot or GIF here)
+![Pointex Game Screenshot](/public/pointex-preview.png)
 
 ---
 
@@ -66,11 +66,11 @@ npm run dev
 
 - AI opponent (single player mode)
 - Mobile app version
-- ound effects
+- Sound effects
 - Online multiplayer
 
 ---
 
 👤 Author
 
-Built by a developer learning full-stack React through real projects.
+Built by Prince Jr, a developer learning full-stack React through real projects.
